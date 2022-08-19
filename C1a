@@ -1,0 +1,58 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "Kh1Jcrq6nx7a"
+      },
+      "outputs": [],
+      "source": [
+        "class frutos(ABC):\n",
+        "  def __init__(self):\n",
+        "    self.prob = random.randint(0,1)\n",
+        "    self.horasderegado = 0\n",
+        "\n",
+        "\n",
+        "class Invernadero:\n",
+        "  def __init__(self, huertos):\n",
+        "    self.capacidad = None\n",
+        "    self.agua_actual = None\n",
+        "    self.temp_actual = None\n",
+        "    self.huertos = huertos\n",
+        "    self.puerta = \"cerrada\"\n",
+        "    self.contador = 0\n",
+        "\n",
+        "  def revision_tanque(self):\n",
+        "    minimo_ml = 0\n",
+        "    for huerto in huertos:\n",
+        "      minimo_ml += huerto.frutos.mlporh #es la idea despues busco donde poner el mlporh\n",
+        "    if self.agua_actual < minimo_ml:\n",
+        "      self.agua_actual = self.capacidad\n",
+        "  \n",
+        "  def revisar_temp(self):\n",
+        "    if self.contador == 5 and self.puerta == \"cerrada\":\n",
+        "      self.temp_actual += random.randint(3,5)\n",
+        "    elif self.temp_actual > 26 and self.puerta == \"cerrada\":\n",
+        "      self.puerta = \"abierta\"\n",
+        "  \n"
+      ]
+    }
+  ]
+}
